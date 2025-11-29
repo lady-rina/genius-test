@@ -116,6 +116,13 @@ ul {
   background-color: transparent;
 }
 
+/* .button:disabled {
+  color: gray;
+  background-color: lightgray;
+  border-color: currentColor;
+  cursor: not-allowed;
+} */
+
 /* Link */
 .link {
   color: var(--color-primary-light);
@@ -561,6 +568,14 @@ address.info {
   outline: none;
 }
 
+.form-input:disabled {
+  border-color: lightgray;
+}
+
+.form-input:disabled::placeholder {
+  color: lightgray;
+}
+
 .form-input::placeholder {
   color: var(--color-secondary-dark);
   font-size: 16px;
@@ -589,3 +604,31 @@ address.info {
   color: var(--color-primary-dark);
   text-underline-offset: 2px;
 }
+
+/* .checkbox {
+  position: relative;
+}
+
+.checkbox-input {
+  appearance: none;
+}
+
+.checkbox-input:checked + .checkbox-label::before {
+  background-color: var(--color-secondary-dark);
+}
+
+.checkbox-label {
+  padding-left: 24px;
+}
+
+.checkbox-label::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 5px;
+  border: 1px solid var(--color-primary-dark);
+  border-radius: 2px;
+  content: '';
+} */
