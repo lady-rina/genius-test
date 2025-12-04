@@ -160,12 +160,14 @@ ul {
 }
 .chef-card__photo {
   width: 140px;
-  border-radius: 4px 4px 4px 200px;
-  box-shadow: -16px 16px 0 0 var(--color-primary-light), -16px 16px 0 2px var(--color-secondary-dark);
+  border-radius: 2px 2px 2px 116px;
+  box-shadow: -8px 8px 0 0 var(--color-primary-light), -8px 8px 0 2px var(--color-secondary-dark);
 }
 @media screen and (min-width: 1280px) {
   .chef-card__photo {
     width: 240px;
+    border-radius: 4px 4px 4px 200px;
+    box-shadow: -16px 16px 0 0 var(--color-primary-light), -16px 16px 0 2px var(--color-secondary-dark);
   }
 }
 .chef-card__title {
@@ -238,7 +240,7 @@ ul {
   border-radius: 8px;
   background-color: transparent;
 }
-.input__control__focus {
+.input__control:focus {
   border-color: var(--color-brand-normal);
   outline: none;
 }
@@ -257,6 +259,11 @@ ul {
 }
 .input__control__:focus::placeholder {
   color: var(--color-primary-dark);
+}
+@media screen and (min-width: 768px) {
+  .input__control {
+    padding: 16px 42px;
+  }
 }
 
 .link {
@@ -442,16 +449,36 @@ ul {
   content: "";
 }
 .footer::before {
-  width: 180px;
-  height: 120px;
-  left: 0;
+  width: 100px;
+  height: 90px;
+  right: 0;
   background-image: url("../images/decor-bread-small.png");
 }
+@media screen and (min-width: 768px) {
+  .footer::before {
+    left: 0;
+    right: auto;
+    width: 180px;
+    height: 120px;
+    background-image: url("../images/decor-bread-small.png");
+  }
+}
 .footer::after {
-  width: 380px;
-  height: 190px;
-  right: 0;
+  width: 85px;
+  height: 205px;
+  top: 0;
+  left: 0;
   background-image: url("../images/decor-bread-large.png");
+}
+@media screen and (min-width: 768px) {
+  .footer::after {
+    right: 0;
+    top: auto;
+    left: auto;
+    width: 380px;
+    height: 190px;
+    background-image: url("../images/decor-bread-large.png");
+  }
 }
 .footer__container {
   display: flex;
@@ -476,8 +503,20 @@ ul {
     text-align: left;
   }
 }
-.footer__logo, .footer__menu {
+.footer__logo {
   flex-grow: 1;
+}
+.footer__menu {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 16px;
+}
+.footer__address-list, .footer__address-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 16px;
 }
 .footer__address-list, .footer__address-info {
   flex-grow: 1;
@@ -498,6 +537,7 @@ ul {
   fill: var(--color-brand-normal);
 }
 .footer__address-copyright {
+  color: var(--color-secondary-dark);
   font-size: 14px;
 }
 
@@ -642,11 +682,22 @@ ul {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 2;
   width: 100%;
   height: 100%;
+  padding: 16px 24px;
   background-color: var(--color-primary-light);
   transform: translateX(100%);
   transition: transform 0.3s;
+}
+.mobile-menu::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 180px;
+  height: 240px;
+  background-image: url("../../images/bread-circle-words.png");
+  content: "";
 }
 .mobile-menu.is-open {
   transform: translateX(0);
@@ -655,6 +706,32 @@ ul {
   position: absolute;
   top: 16px;
   right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  fill: transparent;
+  stroke: var(--color-primary-dark);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.mobile-menu__logo {
+  margin-bottom: 32px;
+}
+.mobile-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.mobile-menu__link {
+  color: var(--color-primary-dark);
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+.mobile-menu__link:hover {
+  color: var(--color-brand-normal);
 }
 
 .backdrop {
