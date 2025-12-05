@@ -112,7 +112,7 @@ ul {
 
 .button {
   display: block;
-  padding: 16px 32px;
+  padding: 10px 24px;
   color: var(--color-primary-light);
   font-weight: 600;
   background-color: var(--color-brand-normal);
@@ -120,10 +120,14 @@ ul {
   border-radius: 8px;
   cursor: pointer;
 }
-
 .button:hover {
   color: var(--color-brand-dark);
-  background-color: transparent;
+  background-color: var(--color-primary-light);
+}
+@media screen and (min-width: 768px) {
+  .button {
+    padding: 16px 32px;
+  }
 }
 
 .carousel-button {
@@ -232,7 +236,7 @@ ul {
   left: 42px;
 }
 .input__control {
-  padding: 16px 42px;
+  padding: 8px 24px;
   width: 100%;
   font-size: 16px;
   line-height: 1.17;
@@ -271,7 +275,6 @@ ul {
   text-decoration: none;
   transition: color 0.3s;
 }
-
 .link:hover {
   color: var(--color-brand-normal);
 }
@@ -362,7 +365,7 @@ ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
 }
 @media screen and (min-width: 768px) {
   .chefs-section__list {
@@ -549,7 +552,6 @@ ul {
   line-height: 1.5;
   text-align: center;
 }
-
 .form-terms__link {
   color: var(--color-primary-dark);
   text-underline-offset: 2px;
@@ -601,11 +603,16 @@ ul {
 .header__menu {
   display: none;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
   .header__menu {
     display: flex;
     gap: 64px;
     flex-grow: 1;
+    justify-content: flex-end;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header__menu {
     justify-content: center;
   }
 }
@@ -625,16 +632,10 @@ ul {
   border: none;
   fill: var(--color-primary-light);
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
   .header__burger {
     display: none;
   }
-}
-.header .header-item {
-  margin-right: 64px;
-}
-.header .header-item:last-child {
-  margin-right: 0;
 }
 
 .hero-section {
@@ -644,7 +645,7 @@ ul {
   background-position: center top;
   background-size: cover;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
   .hero-section {
     padding: 272px 0;
   }
@@ -811,6 +812,19 @@ ul {
 .modal__button {
   margin: 0 auto 24px;
 }
+.modal__container {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.modal__container::after {
+  width: 85px;
+  height: 205px;
+  top: 0;
+  left: 0;
+  background-image: url("../images/bread-circle-words.png");
+}
 
 .section {
   padding: 20px 0;
@@ -866,18 +880,6 @@ ul {
   .traditions-section__image {
     display: block;
   }
-}
-
-.circle {
-  width: 100px;
-  height: 100px;
-  background-color: #fff;
-}
-
-.circle-big {
-  width: 200px;
-  height: 200px;
-  background-color: green;
 }
 
 /* .checkbox {
